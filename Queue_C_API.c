@@ -75,3 +75,22 @@ Queue_YES_NO Queue_isFull(Queue* q_ptr)
         return Queue_NO;
 }
 
+QUEUE_DATA* queueToArray(Queue* q_ptr, int* size)
+{
+
+	QUEUE_DATA* d = (QUEUE_DATA*)malloc(sizeof(QUEUE_DATA) * q_ptr->NumElementsInQueue);
+	*size = q_ptr->NumElementsInQueue;
+
+	int i=0;
+	while(!Queue_isEmpty(q_ptr))
+	{
+		dequeue(q_ptr, &d[i++]);
+	}
+
+	for(int j=0; j<*size; j++)
+	{
+		enqueue(q_ptr, d[j]);
+	}
+
+	return d;
+}

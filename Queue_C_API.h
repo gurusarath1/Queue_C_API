@@ -32,4 +32,5 @@ Queue_errorCode enqueue(Queue* q_ptr, QUEUE_DATA x);
 Queue_errorCode dequeue(Queue* q_ptr, QUEUE_DATA* x);
 Queue_YES_NO Queue_isEmpty(Queue* q_ptr);
 Queue_YES_NO Queue_isFull(Queue* q_ptr);
+QUEUE_DATA* queueToArray(Queue* q_ptr, int* size);
 
